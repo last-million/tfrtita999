@@ -88,9 +88,9 @@ body.dark-mode {
 .dashboard-grid {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
   gap: 24px;
-  overflow-x: auto;
+  /* overflow-x: auto; */ /* Remove horizontal scroll */
   padding-bottom: 16px; /* Add padding to show scrollbar */
   margin-bottom: 20px;
 }
