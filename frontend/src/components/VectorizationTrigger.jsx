@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import api from '../services/api.js' // Use default import and add .js
+import api from '../services/api.js'; // Use default import
 
 export default function VectorizationTrigger({ files, supabaseTable, onVectorize }) {
   const [isVectorizing, setIsVectorizing] = useState(false)
