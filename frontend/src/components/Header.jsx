@@ -4,7 +4,7 @@ import './Header.css';
 import { useLanguage } from '../context/LanguageContext';
 import { useLocation, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import translations from '../translations.js';
+import translations from '/src/translations.js'; // Try absolute path from src
 
 function Header() {
   const location = useLocation();
