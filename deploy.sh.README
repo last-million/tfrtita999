@@ -1,0 +1,57 @@
+# DEPLOYMENT INSTRUCTIONS
+
+Follow these steps to fix the login issues:
+
+1. Copy this modified deploy.sh file to your Linux server
+
+2. Run the following commands on your server:
+```bash
+# Make sure the script has execute permissions
+chmod +x deploy.sh
+
+# Run the deployment script with sudo
+sudo ./deploy.sh
+```
+
+3. After deployment completes, verify that the API is working by testing the auth endpoints:
+```bash
+# Test the token endpoint
+curl -X POST -H "Content-Type: application/json" -d '{"username":"hamza","password":"AFINasahbi@-11"}' https://ajingolik.fun/api/auth/token
+
+# Test the me endpoint
+# Replace YOUR_TOKEN with the token from the previous command
+curl -H "Authorization: Bearer YOUR_TOKEN" https://ajingolik.fun/api/auth/me
+```
+
+## What's Fixed
+
+This deploy.sh script includes critical fixes for the login functionality:
+
+1. Added the missing `/api/auth/me` endpoint directly in main.py
+2. Implemented proper JWT validation
+3. Added special handling for hardcoded users
+4. Fixed Nginx configuration to properly forward requests
+
+## Troubleshooting
+
+If you still encounter issues after deployment:
+
+1. Check the backend logs:
+```bash
+sudo journalctl -u tfrtita333 -f
+```
+
+2. Check the Nginx logs:
+```bash
+sudo tail -f /var/log/nginx/error.log
+```
+
+3. Make sure the service is running:
+```bash
+sudo systemctl status tfrtita333
+```
+
+4. Restart the services:
+```bash
+sudo systemctl restart tfrtita333
+sudo systemctl restart nginx
