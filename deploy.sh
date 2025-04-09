@@ -76,6 +76,7 @@ systemctl stop mysql 2>/dev/null || true
 
 # Kill any running processes
 killall -9 mysqld 2>/dev/null || true
+killall -9 nginx 2>/dev/null || true # Added explicit kill here too
 
 # Remove MySQL completely
 apt purge -y mysql-server mysql-client mysql-common libmysqlclient-dev default-libmysqlclient-dev
@@ -857,8 +858,12 @@ chmod -R 755 "${WEB_ROOT}"
 # XIII. SSL CERTIFICATE SETUP (Certbot)
 # -----------------------------------------------------------
 log "Obtaining SSL certificates..."
-# Stop Nginx temporarily if running
+# Force stop Nginx temporarily if running
+log "Attempting to stop any running Nginx processes..."
 systemctl stop nginx || true
+sleep 2 # Give time for the process to stop
+killall -9 nginx || true # Force kill if service stop failed
+sleep 1
 
 # Run Certbot with nginx plugin
 certbot --nginx -d "${DOMAIN}" --non-interactive --agree-tos -m "${EMAIL}" --redirect || log "WARNING: SSL certificate generation failed"
@@ -885,6 +890,12 @@ server {
     # Redirect HTTP to HTTPS (Certbot usually handles this, but good as a fallback)
     location / {
         return 301 https://\$host\$request_uri;
+    }
+
+    # Add location for Certbot ACME challenge
+    location ~ /.well-known/acme-challenge/ {
+        allow all;
+        root /var/www/html; # Or adjust if Certbot uses a different root
     }
 }
 
@@ -942,6 +953,12 @@ check_error "Failed to configure Nginx"
 # -----------------------------------------------------------
 log "Starting services..."
 
+# Force stop any lingering Nginx before final restart
+log "Attempting to stop any lingering Nginx processes before final restart..."
+systemctl stop nginx || true
+sleep 2
+killall -9 nginx || true
+sleep 1
 # Start Nginx
 systemctl restart nginx || log "WARNING: Failed to restart Nginx"
 check_error "Nginx failed to start"
