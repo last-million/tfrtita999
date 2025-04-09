@@ -14,7 +14,7 @@ import Dashboard from './pages/Dashboard.jsx';
 import CallManager from './pages/CallManager.jsx';
 import CallHistory from './pages/CallHistory.jsx';
 import CallDetails from './pages/CallDetails.jsx';
-import KnowledgeBase from './pages/KnowledgeBase.jsx';
+import KnowledgeBase from './pages/KB.jsx'; // Renamed for testing
 import Authentication from './pages/Authentication.jsx';
 import SystemConfig from './pages/SystemConfig.jsx';
 import LoginPage from './pages/LoginPage.jsx';
@@ -103,7 +103,7 @@ function App() {
                 <Route path="/knowledge-base" element={
                   <ProtectedRoute>
                     <Layout>
-                      <KnowledgeBase />
+                      <KnowledgeBase /> {/* Component name remains the same */}
                     </Layout>
                   </ProtectedRoute>
                 } />
