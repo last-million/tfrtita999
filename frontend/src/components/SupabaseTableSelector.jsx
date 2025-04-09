@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { api } from '../services/api'
+import api from '../services/api.js' // Use default import and add .js
 
 export default function SupabaseTableSelector({ onSelect }) {
   const [tables, setTables] = useState([])
