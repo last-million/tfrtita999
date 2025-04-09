@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { api } from '../services/api'
+import api from '../services/api.js' // Use default import and add .js
 import './GoogleDriveIntegration.css'
 
 export default function GoogleDriveIntegration({ 
