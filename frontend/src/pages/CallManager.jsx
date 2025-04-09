@@ -3,7 +3,7 @@ import './CallManager.css'
 import ServiceConnectionManager from '../services/ServiceConnectionManager'
 import { useLanguage } from '../context/LanguageContext';
 import translations from '../translations';
-import api from '../services/api.js'; // Use default import and add .js
+import { api } from '../services/api.js'; // Revert to named import
 import UltravoxToolsManager from '../services/UltravoxToolsManager';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faClock, faUser, faFileAudio, faFileText, faDollarSign, faList, faCalendar, faEnvelope } from '@fortawesome/free-solid-svg-icons';
