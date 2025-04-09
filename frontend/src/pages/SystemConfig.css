@@ -1,0 +1,262 @@
+.system-config-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.system-config-container h1 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+}
+
+.system-tabs {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.system-tabs button {
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #555;
+  transition: all 0.3s ease;
+}
+
+.system-tabs button:hover {
+  background-color: #f0f0f0;
+}
+
+.system-tabs button.active {
+  border-bottom: 3px solid #007bff;
+  color: #007bff;
+  font-weight: 500;
+}
+
+.tab-content {
+  padding: 20px 0;
+}
+
+/* Status Panel */
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.status-item {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.status-item h3 {
+  margin-top: 0;
+  color: #555;
+  font-size: 16px;
+}
+
+.status-good {
+  color: #28a745;
+  font-weight: 500;
+}
+
+.status-warning {
+  color: #ffc107;
+  font-weight: 500;
+}
+
+.status-error {
+  color: #dc3545;
+  font-weight: 500;
+}
+
+/* Services Panel */
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.service-item {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.service-item h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.service-item label {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.service-item label span {
+  min-width: 100px;
+}
+
+.service-item input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.config-button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.config-button:hover {
+  background-color: #0069d9;
+}
+
+/* Users Panel */
+.user-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.primary-button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.secondary-button {
+  padding: 8px 16px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.warning-button {
+  padding: 8px 16px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.user-list {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.user-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  padding: 15px;
+  background-color: #f8f9fa;
+  font-weight: 500;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.status-active {
+  color: #28a745;
+}
+
+.status-inactive {
+  color: #dc3545;
+}
+
+.icon-button {
+  padding: 5px 10px;
+  background-color: transparent;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.icon-button:hover {
+  background-color: #f8f9fa;
+}
+
+/* Backup Panel */
+.backup-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.action-item {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.action-item h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.backup-list {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.backup-item {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1fr 2fr;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .system-tabs {
+    flex-wrap: wrap;
+  }
+  
+  .system-tabs button {
+    flex: 1 0 50%;
+  }
+  
+  .user-header, .user-item, .backup-item {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+  
+  .user-header span {
+    display: none;
+  }
+}
