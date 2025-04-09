@@ -14,7 +14,7 @@ import Dashboard from './pages/Dashboard';
 import CallManager from './pages/CallManager';
 import CallHistory from './pages/CallHistory';
 import CallDetails from './pages/CallDetails';
-import KnowledgeBase from './pages/KnowledgeBase';
+import KnowledgeBase from './pages/KnowledgeBase.jsx';
 import Authentication from './pages/Authentication';
 import SystemConfig from './pages/SystemConfig';
 import LoginPage from './pages/LoginPage';
