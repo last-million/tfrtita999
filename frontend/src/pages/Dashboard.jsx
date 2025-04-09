@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './Dashboard.css'
-import api from '../services/api.js'; // Use default import and add .js
+import { api } from '../services/api.js'; // Revert to named import
 
 // Import new components
 import CallAnalyticsChart from '../components/CallAnalyticsChart';
