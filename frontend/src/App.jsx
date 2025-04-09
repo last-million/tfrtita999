@@ -10,14 +10,14 @@ import ProtectedRoute from './components/ProtectedRoute';
 // Components
 import Header from './components/Header';
 import Navbar from './components/Navbar';
-import Dashboard from './pages/Dashboard';
-import CallManager from './pages/CallManager';
-import CallHistory from './pages/CallHistory';
-import CallDetails from './pages/CallDetails';
-import KnowledgeBase from './pages/KnowledgeBase.jsx';
-import Authentication from './pages/Authentication';
-import SystemConfig from './pages/SystemConfig';
-import LoginPage from './pages/LoginPage';
+import Dashboard from './pages/Dashboard.jsx';
+import CallManager from './pages/CallManager.jsx';
+import CallHistory from './pages/CallHistory.jsx';
+import CallDetails from './pages/CallDetails.jsx';
+// import KnowledgeBase from './pages/KnowledgeBase.jsx'; // Temporarily commented out for debugging build
+import Authentication from './pages/Authentication.jsx';
+import SystemConfig from './pages/SystemConfig.jsx';
+import LoginPage from './pages/LoginPage.jsx';
 
 // Styles
 import './App.css';
@@ -100,6 +100,7 @@ function App() {
                   </ProtectedRoute>
                 } />
                 
+                {/* Temporarily commented out route for debugging build
                 <Route path="/knowledge-base" element={
                   <ProtectedRoute>
                     <Layout>
@@ -107,6 +108,7 @@ function App() {
                     </Layout>
                   </ProtectedRoute>
                 } />
+                */}
                 
                 <Route path="/auth" element={
                   <ProtectedRoute>
