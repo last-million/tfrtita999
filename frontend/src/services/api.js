@@ -25,7 +25,7 @@ axiosInstance.interceptors.request.use(
 );
 
 // Module exports
-const api = { // Changed from export const
+export const api = {
   // Authentication endpoints
   auth: {
     login: (credentials) => axiosInstance.post('/auth/token', credentials),
@@ -129,4 +129,4 @@ const api = { // Changed from export const
   health: () => axiosInstance.get('/health'),
 };
 
-export default api; // Keep default export
+// Removed default export, using named export above
