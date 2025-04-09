@@ -1,6 +1,6 @@
 // frontend/src/components/Login.jsx
 import React, { useState, useEffect } from "react";
-import api from "../services/api.js"; // Use default import and add .js
+import { api } from "../services/api.js"; // Revert to named import
 
 const Login = () => {
   const [username, setUsername] = useState("");
