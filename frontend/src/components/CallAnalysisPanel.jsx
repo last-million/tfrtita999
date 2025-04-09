@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import api from '../services/api.js'; // Use default import and add .js
+import { api } from '../services/api.js'; // Revert to named import
 import { useLanguage } from '../context/LanguageContext';
 import translations from '../translations';
 import './CallAnalysisPanel.css';
