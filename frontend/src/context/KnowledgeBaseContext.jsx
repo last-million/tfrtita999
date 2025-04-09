@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer, useCallback } from 'react'
-import api from '../services/api.js' // Changed to default import
+import { api } from '../services/api.js' // Revert back to named import
 
 const KnowledgeBaseContext = createContext(null)
 
