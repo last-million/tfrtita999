@@ -1,0 +1,95 @@
+/* ResourceUsageGauge.css */
+.resource-gauge {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.gauge-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  font-size: 0.85rem;
+}
+
+.gauge-label {
+  color: #555;
+}
+
+.gauge-value {
+  font-weight: 500;
+}
+
+.gauge-bar-container {
+  height: 8px;
+  background-color: #e9ecef;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gauge-bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease-in-out;
+}
+
+/* Status-based colors */
+.gauge-bar.safe {
+  background-color: #28a745;
+}
+
+.gauge-bar.warning {
+  background-color: #ffc107;
+}
+
+.gauge-bar.critical {
+  background-color: #dc3545;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Threshold markers */
+.threshold-markers {
+  position: relative;
+  height: 4px;
+}
+
+.threshold-marker {
+  position: absolute;
+  width: 2px;
+  height: 8px;
+  bottom: 0;
+  transform: translateY(-2px);
+}
+
+.threshold-marker.safe {
+  background-color: rgba(40, 167, 69, 0.7);
+}
+
+.threshold-marker.warning {
+  background-color: rgba(255, 193, 7, 0.7);
+}
+
+/* Pulse effect for critical status */
+.pulse-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 0;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}

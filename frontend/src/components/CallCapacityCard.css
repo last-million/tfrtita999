@@ -1,0 +1,79 @@
+/* CallCapacityCard.css */
+.call-capacity-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.call-capacity-card .capacity-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.call-capacity-card .capacity-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 12px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.call-capacity-card .metric-value {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.call-capacity-card .metric-value.highlighted {
+  color: #007bff;
+}
+
+.call-capacity-card .metric-label {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.call-capacity-card .capacity-info {
+  grid-column: 1 / -1;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  padding: 16px;
+}
+
+.call-capacity-card .info-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.call-capacity-card .info-label {
+  color: #555;
+}
+
+.call-capacity-card .info-value {
+  font-weight: 500;
+}
+
+.call-capacity-card .resource-gauges {
+  margin-top: 16px;
+}
+
+.call-capacity-card .resource-gauges h5 {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .call-capacity-card .capacity-metrics {
+    grid-template-columns: 1fr;
+  }
+}
