@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './CallHistory.css';
-import api from '../services/api.js'; // Use default import
+import { api } from '../services/api.js'; // Revert to named import
 import { useLanguage } from '../context/LanguageContext';
 import translations from '../translations';
 import DataExportModal from '../components/DataExportModal';
