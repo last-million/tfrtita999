@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer, useCallback } from 'react'
-import { api } from '../services/api.js'
+import { api } from '/src/services/api.js' // Try absolute path from src
 
 const KnowledgeBaseContext = createContext(null)
 
