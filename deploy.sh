@@ -830,6 +830,10 @@ rm -rf node_modules || log "Warning: Failed to remove node_modules, continuing..
 rm -f package-lock.json || log "Warning: Failed to remove package-lock.json, continuing..."
 npm cache clean --force || log "Warning: npm cache clean failed, continuing..."
 
+# ** ADDED VITE UPDATE STEP **
+log "Updating Vite and related dependencies..."
+npm install vite@latest @vitejs/plugin-react@latest --save-dev || log "Warning: Failed to update Vite dependencies, continuing..."
+
 log "Installing frontend dependencies..."
 npm install
 check_error "Failed to install frontend dependencies"
