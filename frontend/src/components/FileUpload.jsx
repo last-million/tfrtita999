@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import api from '../services/api.js' // Use default import and add .js
+import { api } from '../services/api.js' // Revert to named import
 
 export default function FileUpload({ onFileUpload }) {
   const [file, setFile] = useState(null)
